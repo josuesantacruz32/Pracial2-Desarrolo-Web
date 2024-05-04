@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcial2</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estilo personalizado para el botón */
+        .custom-btn {
+            color: #fff; /* Color del texto */
+            background-color: #a494ff; /* Color de fondo predeterminado */
+            border-color: #a494ff; /* Color del borde predeterminado */
+        }
+
+        /* Estilo personalizado para el botón cuando se le da clic */
+        .custom-btn:hover {
+            color: #fff; /* Color del texto */
+            background-color: #a494ff; /* Color de fondo al pasar el mouse */
+            border-color: #0a494ff; /* Color del borde al pasar el mouse */
+        }
+    </style>
+    <style>
+        /* Define el estilo de fuente y tamaño para todo el documento */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: #333; /* Color de texto predeterminado */
+        }
+
+        /* Estilo para los títulos (h1) */
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000000; 
+        }
+
+        /* Estilo para los subtítulos (h2) */
+        h2 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #000000; 
+        }
+
+        /* Estilo para las líneas horizontales (hr) */
+        hr {
+            border: none; /* Quita el borde predeterminado */
+            height: 10px; /* Altura de la línea */
+            background-color: #666666; /* Color naranja para las líneas horizontales */
+            margin: 80px 0; /* Margen superior e inferior */
+        }
+    </style>
+    <style>
+        /* Estilos de la tabla */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+
+    <style>
+        /* Estilos opcionales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #000000;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 2px solid #000000;
+        }
+        th {
+            background-color: #a494ff;
+            border-right: 1px solid #000000;
+        }
+        tr:nth-child(even) {
+            background-color: #a494ff;
+        }
+    </style>
+    <style>
+        body {
+            padding-top: 60px; /* compensar la altura de la barra de navegación fija */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #a494ff;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#seccion1">Web APIs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#seccion2">Microservicios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#seccion3">Desarrollo de una Web API</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#seccion4"> Manejo de Contenedores</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#seccion5"> Desarrollo de aplicaciones para la nube</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#seccion6">Desarrollo de aplicaciones web en
+                    ASP.NET</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    <!-- Barra de navegación -->
+    <!--<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <div class="container">
+            <a class="navbar-brand" href="#">Sitio informativo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#seccion1">Web APIs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#seccion2">Microservicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#seccion3">Desarrollo de una Web API</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#seccion4"> Manejo de Contenedores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#seccion5"> Desarrollo de aplicaciones para la nube</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#seccion6">Desarrollo de aplicaciones web en
+                            ASP.NET</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>-->
+    
+
+    <!-- Contenido -->
+    <div class="panel panel-info">
+    <div class="container">
+        <section id="seccion1" class="mt-5">
+            <div class="text-center">
+                <img src="img/apis1.png" class="rounded" alt="...">
+              </div>
+            <section id="api-info" class="mt-5">
+                <h2>¿Qué es una API web?</h2>
+                <p>Una API web o API de servicios web es una interfaz de procesamiento de aplicaciones entre un servidor web y un navegador web. Todos los servicios web son API, pero no todas las API son servicios web. La API de REST es un tipo especial de API web que utiliza el estilo arquitectónico estándar explicado anteriormente.</p>
+            
+                <h2>¿Qué son las integraciones de las API?</h2>
+                <p>Las integraciones de las API son componentes de software que actualizan automáticamente los datos entre los clientes y los servidores. Algunos ejemplos de integraciones de las API son la sincronización automática de datos en la nube desde la galería de imágenes de su teléfono o la sincronización automática de la hora y la fecha en su laptop cuando viaja a otra zona horaria. Las empresas también pueden utilizarlas para automatizar de manera eficiente muchas funciones del sistema.</p>
+            
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo de API</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>API privadas</td>
+                            <td>Internas de una empresa y solo se utilizan para conectar sistemas y datos dentro de la empresa.</td>
+                        </tr>
+                        <tr>
+                            <td>API públicas</td>
+                            <td>Están abiertas al público y cualquier persona puede utilizarlas. Puede haber o no alguna autorización y coste asociado a este tipo de API.</td>
+                        </tr>
+                        <tr>
+                            <td>API de socios</td>
+                            <td>Solo pueden acceder a ellas los desarrolladores externos autorizados para ayudar a las asociaciones entre empresas.</td>
+                        </tr>
+                        <tr>
+                            <td>API compuestas</td>
+                            <td>Combinan dos o más API diferentes para abordar requisitos o comportamientos complejos del sistema.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Información sobre Web APIs</h2>
+                <p>Las Web APIs (Interfaces de Programación de Aplicaciones Web) son conjuntos de reglas y definiciones que permiten a las aplicaciones de software comunicarse entre sí a través de Internet. Estas APIs facilitan la interacción entre sistemas y aplicaciones, permitiendo que diferentes aplicaciones accedan a datos y funcionalidades de otras aplicaciones o servicios web.</p>
+                <p>Algunas características importantes de las Web APIs incluyen:</p>
+                <ul>
+                    <li><strong>Interoperabilidad:</strong> Las Web APIs permiten que diferentes sistemas y plataformas se comuniquen entre sí de manera eficiente, independientemente de las tecnologías subyacentes utilizadas.</li>
+                    <li><strong>Acceso a datos:</strong> Las Web APIs proporcionan acceso a datos y recursos de manera estructurada, permitiendo que las aplicaciones accedan y utilicen información de diversas fuentes.</li>
+                    <li><strong>Extensibilidad:</strong> Las Web APIs pueden ser extendidas y personalizadas para adaptarse a las necesidades específicas de una aplicación o servicio.</li>
+                    <li><strong>Seguridad:</strong> Las Web APIs pueden implementar medidas de seguridad, como autenticación y autorización, para proteger los datos y garantizar que solo los usuarios autorizados puedan acceder a ellos.</li>
+                </ul>
+                <p>Las Web APIs pueden clasificarse en diferentes categorías, incluyendo:</p>
+                <ul>
+                    <li><strong>RESTful APIs:</strong> Basadas en los principios de REST (Representational State Transfer), estas APIs utilizan métodos HTTP estándar (GET, POST, PUT, DELETE) para permitir la manipulación de recursos a través de la web.</li>
+                    <li><strong>SOAP APIs:</strong> Basadas en el protocolo SOAP (Simple Object Access Protocol), estas APIs proporcionan un estándar para la comunicación entre aplicaciones a través de mensajes XML.</li>
+                    <li><strong>GraphQL APIs:</strong> Introducido por Facebook, GraphQL es un lenguaje de consulta y manipulación de datos que permite a los clientes solicitar y recibir solo los datos que necesitan, lo que proporciona una mayor eficiencia en la transferencia de datos.</li>
+                </ul>
+                <p>En resumen, las Web APIs desempeñan un papel fundamental en la integración de sistemas y servicios en la web, permitiendo la creación de aplicaciones complejas y altamente interoperables.</p>
+            </section>
+        </div>
+        <hr>
+
+        </section>
+        <section id="seccion2" class="mt-5">
+            <div class="container">
+
+                <div class="text-center">
+                    <img src="img/micro1.jpg" class="rounded" alt="...">
+                  </div>
+                <p>Los microservicios son un enfoque arquitectónico y organizativo para el desarrollo de software donde el software está compuesto por pequeños servicios independientes que se comunican a través de API bien definidas. Los propietarios de estos servicios son equipos pequeños independientes.</p>
+                
+                <h2>Arquitectura monolítica en comparación con la arquitectura de microservicios</h2>
+                <p>Con las arquitecturas monolíticas, todos los procesos están estrechamente asociados y se ejecutan como un solo servicio. Esto significa que, si un proceso de una aplicación experimenta un pico de demanda, se debe escalar toda la arquitectura. Agregar o mejorar las características de una aplicación monolítica se vuelve más complejo a medida que crece la base de código. Esta complejidad limita la experimentación y dificulta la implementación de nuevas ideas. Las arquitecturas monolíticas aumentan el riesgo de la disponibilidad de la aplicación porque muchos procesos dependientes y estrechamente vinculados aumentan el impacto del error de un proceso.</p>
+                <p>Con una arquitectura de microservicios, una aplicación se crea con componentes independientes que ejecutan cada proceso de la aplicación como un servicio. Estos servicios se comunican a través de una interfaz bien definida mediante API ligeras. Los servicios se crean para las capacidades empresariales y cada servicio desempeña una sola función. Debido a que se ejecutan de forma independiente, cada servicio se puede actualizar, implementar y escalar para satisfacer la demanda de funciones específicas de una aplicación.</p>
+                
+                <h2>Características de los microservicios</h2>
+                <p><strong>Autónomos:</strong> Cada servicio componente en una arquitectura de microservicios se puede desarrollar, implementar, operar y escalar sin afectar el funcionamiento de otros servicios. Los servicios no necesitan compartir ninguno de sus códigos o implementaciones con otros servicios. Cualquier comunicación entre componentes individuales ocurre a través de API bien definidas.</p>
+                <p><strong>Especializados:</strong> Cada servicio está diseñado para un conjunto de capacidades y se enfoca en resolver un problema específico. Si los desarrolladores aportan más código a un servicio a lo largo del tiempo y el servicio se vuelve complejo, se puede dividir en servicios más pequeños.</p>
+                
+                <h2>Beneficios de los microservicios</h2>
+                <p><strong>Agilidad:</strong> Los microservicios fomentan una organización de equipos pequeños e independientes que se apropian de los servicios. Los equipos actúan en un contexto pequeño y bien comprendido, y están facultados para trabajar de forma más independiente y más rápida. Esto acorta los tiempos del ciclo de desarrollo. Usted se beneficia significativamente del aumento de rendimiento de la organización.</p>
+                <p><strong>Escalado flexible:</strong> Los microservicios permiten que cada servicio se escale de forma independiente para satisfacer la demanda de la característica de la aplicación que respalda. Esto permite a los equipos adecuarse a las necesidades de la infraestructura, medir con precisión el costo de una característica y mantener la disponibilidad si un servicio experimenta un aumento en la demanda.</p>
+                <p><strong>Implementación sencilla:</strong> Los microservicios permiten la integración y la entrega continuas, lo que facilita probar nuevas ideas y revertirlas si algo no funciona. El bajo costo de los errores permite experimentar, facilita la actualización del código y acelera el tiempo de comercialización de las nuevas características.</p>
+                <p><strong>Libertad tecnológica:</strong> Las arquitecturas de microservicios no siguen un enfoque de "diseño único". Los equipos tienen la libertad de elegir la mejor herramienta para resolver sus problemas específicos. Como consecuencia, los equipos que crean microservicios pueden elegir la mejor herramienta para cada trabajo.</p>
+                <p><strong>Código reutilizable:</strong> La división del software en módulos pequeños y bien definidos les permite a los equipos usar funciones para diferentes propósitos. Un servicio escrito para una determinada función se puede usar como un componente básico para otra característica. Esto permite que una aplicación arranque por sí sola, ya que los desarrolladores pueden crear nuevas capacidades sin tener que escribir código desde cero.</p>
+                <p><strong>Resistencia:</strong> La independencia del servicio aumenta la resistencia de una aplicación a los errores. En una arquitectura monolítica, un error en un solo componente, puede provocar un error en toda la aplicación. Con los microservicios, si hay un error en todo el servicio, las aplicaciones lo manejan degradando la funcionalidad sin bloquear toda la aplicación.</p>
+                
+                <div style="text-align:center;">
+                <video src="videos/¿Qué es la Arquitectura de Microservicios_.mp4" width=620  height=540 controls poster="vistaprevia.jpg">
+                    Lo sentimos. Este vídeo no puede ser reproducido en tu navegador.<br>
+                    La versión descargable está disponible en <a href="https://www.youtube.com/watch?v=TSiso1F6oqw">Enlace</a>. 
+                    </video>
+                </div>
+            </div>
+            <hr>
+        </section>
+        <section id="seccion3" class="mt-5">
+
+            <div class="text-center">
+                <img src="img/api.jpg" class="rounded" alt="...">
+              </div>
+            <div class="container">
+                <h1>Desarrollo de una Web API</h1>
+                
+                <h2>Planificación</h2>
+                <p>La planificación de una API es esencial. Elabora un plan antes de iniciar el desarrollo de API y crear prototipos. Tu plan debe comenzar con la identificación de una audiencia objetivo de desarrolladores. Luego, considera estos componentes adicionales de tu plan:</p>
+                <ul>
+                    <li>Establece un caso de uso.</li>
+                    <li>Comienza con una especificación.</li>
+                    <li>Describe tus requisitos con anticipación.</li>
+                </ul>
+                <div class="text-center">
+                    <img src="img/api1.png" class="rounded" alt="...">
+                  </div>
+                <h2>Diseño y Prototipo</h2>
+                <p>Comienza a diseñar tu API con la creación de un primer prototipo que puedas continuar perfeccionando. Ten en cuenta estos elementos durante tu proceso de diseño:</p>
+                <ul>
+                    <li>Crea un diagrama de flujo de la API.</li>
+                    <li>Incluye seguridad en tu diseño.</li>
+                    <li>Decide qué arquitectura se utilizará.</li>
+                    <li>Planifica tu portal para desarrolladores.</li>
+                    <li>Crea un prototipo.</li>
+                </ul>
+                
+                <h2>Desarrollo</h2>
+                <p>Seguir las prácticas recomendadas de desarrollo de API puede ayudar a tu marca a proteger las API a medida que las creas. Ten en cuenta lo siguiente durante el desarrollo:</p>
+                <ul>
+                    <li>Optimiza tu API.</li>
+                    <li>Ten en cuenta las vulnerabilidades de seguridad.</li>
+                    <li>Ten en cuenta las cuotas y la limitación de solicitudes.</li>
+                </ul>
+                
+                <h2>Prueba</h2>
+                <p>Virtualiza tu API para encontrar errores y posibles cuellos de botella, así como para resolverlos antes de que se publiquen. Ten en cuenta lo siguiente durante las pruebas:</p>
+                <ul>
+                    <li>Identifica problemas y resuélvelos pronto.</li>
+                    <li>Aísla las funciones de la API.</li>
+
+                    <div class="text-center">
+                        <img src="img/api2.jpg" class="rounded" alt="...">
+                      </div>
+                </ul>
+            </div>
+        </section>
+        <hr>
+    
+        <section id="seccion4" class="mt-5">
+            <div class="text-center">
+                <img src="img/contenedor.jpg" class="rounded" alt="...">
+              </div>
+
+            <div class="container">
+                <h1>Manejo de Contenedores</h1>
+                
+                <h2>¿Qué es la creación de contenedores?</h2>
+                <p>La creación de contenedores es un proceso de despliegue de software que agrupa el código de una aplicación con todos los archivos y bibliotecas que necesita para ejecutarse en cualquier infraestructura. Tradicionalmente, para ejecutar cualquier aplicación en un equipo, era necesario instalar la versión que coincidiera con el sistema operativo de la máquina. Sin embargo, con la creación de contenedores, puede crear un solo paquete de software, o contenedor, que se ejecute en todos los tipos de dispositivos y sistemas operativos.</p>
+                
+                <h2>¿Cuáles son los beneficios de la contenedorización?</h2>
+                <p>Los desarrolladores utilizan la creación de contenedores para crear y desplegar aplicaciones modernas gracias a las siguientes ventajas:</p>
+                <ul>
+                    <li><strong>Portabilidad:</strong> Los desarrolladores pueden desplegar aplicaciones en varios entornos sin tener que volver a escribir el código del programa.</li>
+                    <li><strong>Escalabilidad:</strong> Los contenedores son componentes de software ligeros que se ejecutan de manera eficiente y pueden ser escalados fácilmente.</li>
+                    <li><strong>Tolerancia a errores:</strong> Las aplicaciones en contenedores son tolerantes a errores, ya que un contenedor con errores no afecta a otros contenedores.</li>
+                    <li><strong>Agilidad:</strong> Permite a los desarrolladores solucionar problemas y cambiar el código de la aplicación sin interferir con el sistema operativo u otros servicios.</li>
+                </ul>
+                <img src="img/contenedores.png" class="img-thumbnail" alt="...">
+                <h2>¿Qué son los casos de uso de la creación de contenedores?</h2>
+                <p>A continuación, se mencionan algunos casos de uso de la creación de contenedores:</p>
+                <ul>
+                    <li><strong>Migración a la nube:</strong> La migración a la nube implica encapsular aplicaciones heredadas en contenedores e implementarlas en un entorno de computación en la nube.</li>
+                    <li><strong>Adopción de la arquitectura de microservicios:</strong> Las organizaciones que buscan crear aplicaciones en la nube con microservicios requieren tecnología de creación de contenedores.</li>
+                    <li><strong>Dispositivos IoT:</strong> Permite a los desarrolladores implementar y actualizar aplicaciones en todos los dispositivos de IoT con facilidad.</li>
+                </ul>
+                
+                <h2>¿Cómo funciona la inclusión en contenedores?</h2>
+                <p>La inclusión en contenedores implica la creación de paquetes de software autosuficientes que funcionan de manera uniforme, independientemente de las máquinas en las que se ejecuten. Los desarrolladores de software crean y despliegan imágenes de contenedores, es decir, archivos que contienen la información necesaria para ejecutar una aplicación en contenedores. Estas imágenes están compuestas por varias capas que incluyen la infraestructura, el sistema operativo, el motor de contenedores y la aplicación junto con sus dependencias.</p>
+
+                <img src="img/CONTENEDORES2.png" class="img-thumbnail" alt="...">
+            </div>
+
+            <div class="container">
+                <h2>¿Qué es el manejo de contenedores?</h2>
+                <p>El manejo de contenedores se refiere a las prácticas y herramientas utilizadas para gestionar, administrar y operar contenedores de manera eficiente y efectiva a lo largo de su ciclo de vida.</p>
+                
+                <h2>Principales aspectos del manejo de contenedores</h2>
+                <p>El manejo de contenedores abarca una variedad de aspectos, que incluyen:</p>
+                <ul>
+                    <li><strong>Orquestación:</strong> La orquestación de contenedores se refiere a la gestión automática de contenedores en un entorno de clúster, incluida la implementación, escalado, monitoreo y recuperación de contenedores.</li>
+                    <li><strong>Automatización:</strong> Automatizar tareas como la construcción, despliegue y actualización de contenedores para mejorar la eficiencia y reducir los errores humanos.</li>
+                    <li><strong>Monitoreo:</strong> Supervisar el rendimiento, la disponibilidad y el estado de los contenedores para garantizar un funcionamiento óptimo y detectar problemas de manera proactiva.</li>
+                    <li><strong>Seguridad:</strong> Implementar medidas de seguridad para proteger los contenedores y los datos que contienen, incluida la gestión de identidad y acceso, la prevención de vulnerabilidades y el cumplimiento de los estándares de seguridad.</li>
+                    <li><strong>Red:</strong> Configurar y gestionar la red de contenedores para facilitar la comunicación entre ellos y con otros componentes de la infraestructura, así como garantizar la seguridad y el aislamiento de la red.</li>
+                    <li><strong>Almacenamiento:</strong> Gestionar el almacenamiento persistente y efímero utilizado por los contenedores, incluida la asignación de volúmenes, la gestión de datos y la integración con sistemas de almacenamiento externos.</li>
+                </ul>
+                
+                <h2>Herramientas comunes de manejo de contenedores</h2>
+                <p>Existen diversas herramientas diseñadas para facilitar el manejo de contenedores, como:</p>
+                <ul>
+                    <li><strong>Kubernetes:</strong> Una plataforma de orquestación de contenedores de código abierto ampliamente utilizada para automatizar el despliegue, el escalado y la gestión de aplicaciones en contenedores.</li>
+                    <li><strong>Docker Swarm:</strong> Una herramienta de orquestación de contenedores integrada en Docker Engine que facilita la gestión de clústeres de contenedores.</li>
+                    <li><strong>Portainer:</strong> Una interfaz de usuario web que simplifica la gestión de contenedores Docker, ofreciendo funciones como la visualización del estado del clúster, la gestión de imágenes y la supervisión del rendimiento.</li>
+                    <li><strong>Redes de servicios en la nube:</strong> Plataformas de servicios en la nube que ofrecen capacidades integradas de orquestación y gestión de contenedores, como AWS ECS, Google Kubernetes Engine (GKE) y Azure Kubernetes Service (AKS).</li>
+                    <li><strong>Herramientas de monitoreo y registro:</strong> Soluciones como Prometheus, Grafana, ELK Stack (Elasticsearch, Logstash, Kibana) y Splunk que permiten supervisar y analizar el rendimiento y los registros de los contenedores.</li>
+                </ul>
+
+                <img src="img/contenedores3.jpg" class="img-thumbnail" alt="...">
+            </div>
+        </section>
+        <hr>
+
+        <section id="seccion5" class="mt-5">
+
+            <div class="text-center">
+                <img src="img/nube2.webp" class="rounded" alt="...">
+              </div>
+            <div class="container">
+                <h1>Aplicaciones Desarrolladas en la Nube</h1>
+                
+                <h2>Concepto de Aplicaciones en la Nube</h2>
+                <p>Las aplicaciones desarrolladas en la nube son un conjunto de servicios pequeños, independientes y sin conexión directa, diseñados para aportar beneficios notorios a la empresa. Estas aplicaciones permiten acelerar el diseño de nuevas aplicaciones, optimizar las existentes y conectarlas entre sí, ofreciendo las funcionalidades que los usuarios desean al ritmo que necesita la empresa.</p>
+                
+                <h2>¿Qué son las Aplicaciones Nativas de la Nube?</h2>
+                <p>Las aplicaciones "nativas de la nube" están diseñadas específicamente para proporcionar un desarrollo consistente y una experiencia de gestión automatizada a través de nubes privadas, públicas e híbridas. Estas aplicaciones aprovechan el cloud computing para aumentar la escalabilidad y la disponibilidad, con el aprovisionamiento de autoservicio, la automatización del ciclo de vida de la aplicación y la tolerancia a fallos.</p>
+                <h2>Requisitos para Diseñar una Aplicación Nativa de la Nube</h2>
+    <table>
+        <tr>
+            <th>Requisito</th>
+            <th>Descripción</th>
+        </tr>
+        <tr>
+            <td>Reunir a los equipos de desarrollo y operaciones</td>
+            <td>Compartir un objetivo común y comentarios frecuentes mediante DevOps.</td>
+        </tr>
+        <tr>
+            <td>Adoptar contenedores</td>
+            <td>Ofrecer una unidad de implementación de aplicaciones ideal y un entorno de ejecución autónomo.</td>
+        </tr>
+        <tr>
+            <td>Centrarse en la modularidad de la arquitectura</td>
+            <td>Enfocarse en el sistema sin conexión directa y la independencia de los servicios.</td>
+        </tr>
+        <tr>
+            <td>Implementar microservicios</td>
+            <td>Ejecutar capacidades empresariales en su propio proceso y comunicarse a través de API o servicios de mensajería.</td>
+        </tr>
+        <tr>
+            <td>Utilizar flujos de trabajo de DevOps</td>
+            <td>Integración y implementación continuas (CI/CD), operaciones de implementación totalmente automatizadas y entornos de desarrollo estandarizados.</td>
+        </tr>
+    </table> 
+               
+            </div>
+        </section>
+        <hr>
+
+    <section id="seccion6" class="mt-5">
+            <div class="container">
+                <h1>Tecnologías para desarrollo de aplicaciones web en ASP.NET</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tecnología</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ASP.NET MVC</td>
+                            <td>Framework de desarrollo web que utiliza el patrón de diseño Modelo-Vista-Controlador (MVC) para construir aplicaciones web escalables y mantenibles.</td>
+                        </tr>
+                        <tr>
+                            <td>ASP.NET Web Forms</td>
+                            <td>Framework para el desarrollo rápido de aplicaciones web basadas en eventos y controles, facilitando la creación de aplicaciones web basadas en formularios de Windows.</td>
+                        </tr>
+                        <tr>
+                            <td>ASP.NET Core</td>
+                            <td>Reescritura modular, de código abierto y multiplataforma de ASP.NET, adecuada para el desarrollo de aplicaciones web y servicios web modernos y escalables.</td>
+                        </tr>
+                        <tr>
+                            <td>Entity Framework</td>
+                            <td>ORM que simplifica el acceso a datos en aplicaciones .NET, permitiendo trabajar con datos utilizando objetos de dominio y consultas LINQ.</td>
+                        </tr>
+                        <tr>
+                            <td>ASP.NET Web API</td>
+                            <td>Framework para construir servicios web HTTP que se pueden consumir desde diversos clientes, facilitando la creación de API RESTful y aplicaciones distribuidas.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="container">
+                    <h1>ASP.NET Core</h1>
+                    <p>ASP.NET Core es un marco multiplataforma de código abierto y de alto rendimiento que tiene como finalidad compilar aplicaciones modernas conectadas a Internet y habilitadas para la nube.</p>
+            
+                    <h2>¿Qué puede hacer con ASP.NET Core?</h2>
+                    <ul>
+                        <li>Compilar servicios y aplicaciones web, aplicaciones de Internet de las cosas (IoT) y back-ends móviles.</li>
+                        <li>Usar sus herramientas de desarrollo favoritas en Windows, macOS y Linux.</li>
+                        <li>Efectuar implementaciones locales y en la nube.</li>
+                        <li>Ejecutar en .NET.</li>
+                    </ul>
+            
+                    <h2>¿Por qué elegir ASP.NET Core?</h2>
+                    <p>Millones de desarrolladores usan o han usado ASP.NET 4.x para crear aplicaciones web. ASP.NET Core es un nuevo diseño de ASP.NET 4.x que incluye cambios en la arquitectura que dan como resultado un marco más sencillo y modular.</p>
+                    
+                    <p>ASP.NET Core ofrece las siguientes ventajas:</p>
+                    <ul>
+                        <li>Un caso unificado para crear API web y una interfaz de usuario web.</li>
+                        <li>Diseñado para la capacidad de prueba.</li>
+                        <li>Razor Pages hace que la codificación de escenarios centrados en páginas sea más sencilla y productiva.</li>
+                        <li>Blazor permite usar C# en el explorador, junto con JavaScript. Comparta la lógica de aplicación del lado cliente y servidor escrita toda con .NET.</li>
+                        <li>Capacidad para desarrollarse y ejecutarse en Windows, macOS y Linux.</li>
+                        <li>De código abierto y centrado en la comunidad.</li>
+                        <li>Integración de marcos del lado cliente modernos y flujos de trabajo de desarrollo.</li>
+                        <li>Compatibilidad con el hospedaje de servicios de llamada a procedimiento remoto (RPC) con gRPC.</li>
+                        <li>Un sistema de configuración basado en el entorno y preparado para la nube.</li>
+                        <li>Inserción de dependencias integrada.</li>
+                        <li>Una canalización de solicitudes HTTP ligera, modular y de alto rendimiento.</li>
+                        <li>Capacidad para hospedar en lo siguiente: Kestrel, IIS, HTTP.sys, Nginx, Apache, Docker.</li>
+                        <li>Control de versiones en paralelo.</li>
+                        <li>Herramientas que simplifican el desarrollo web moderno.</li>
+                    </ul>
+                </div>
+                <img src="img/asp2.jpg  " class="img-thumbnail" alt="...">
+            </div>
+        </section>
+        <div class="container">
+            <!-- Botón de Bootstrap con color modificable -->
+            <a href="#" class="btn custom-btn btn-lg mt-3" onclick="window.scrollTo(0, 0);">Ir al inicio</a>
+        </div>
+
+    <!-- Pie de página -->
+    <footer class="bg-dark text-white mt-5 py-3">
+        <div class="container text-center">
+            <p>Derechos de autor &copy; 2024 Mi Sitio Web Informativo</p>
+        </div>
+    </footer>
+
+    <!-- Enlaces a los scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
